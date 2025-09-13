@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import BookingForm from "@/components/BookingForm";
+
 import { 
   Car, 
   Users, 
@@ -177,17 +177,17 @@ const FortunerPage = () => {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>
-                  <Link to="#booking">Reserve Fortuner</Link>
+                  <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20Toyota%20Fortuner.">Reserve Fortuner</a>
                 </Button>
                 <div className="flex gap-3">
                   <Button variant="phone" size="lg" asChild>
-                    <a href="tel:03075777559">
+                    <a href="tel:+923075777559">
                       <Phone className="w-5 h-5" />
                       Call Now
                     </a>
                   </Button>
                   <Button variant="whatsapp" size="lg" asChild>
-                    <a href="https://wa.me/+9203075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20Toyota%20Fortuner.">
+                    <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20Toyota%20Fortuner.">
                       <MessageCircle className="w-5 h-5" />
                       WhatsApp
                     </a>
@@ -213,15 +213,15 @@ const FortunerPage = () => {
             </div>
             <div className="flex items-center gap-3 w-full md:w-auto">
               <Button variant="phone" size="sm" asChild className="flex-1 md:flex-none">
-                <a href="tel:03075777559">Call</a>
+                <a href="tel:+923075777559">Call</a>
               </Button>
               <Button variant="whatsapp" size="sm" asChild className="flex-1 md:flex-none">
-                <a href="https://wa.me/+9203075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20Toyota%20Fortuner.">
+                <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20Toyota%20Fortuner.">
                   WhatsApp
                 </a>
               </Button>
               <Button variant="hero" size="sm" asChild className="flex-1 md:flex-none">
-                <Link to="#booking">Reserve Now</Link>
+                <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20Toyota%20Fortuner.">Reserve Now</a>
               </Button>
             </div>
           </div>
@@ -331,20 +331,38 @@ const FortunerPage = () => {
         </div>
       </section>
 
-      {/* Booking Form Section */}
-      <section className="py-20" id="booking">
+      {/* Contact Section */}
+      <section className="py-20" id="contact">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-12">
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Reserve Your Toyota Fortuner
               </h2>
               <p className="text-lg text-muted-foreground">
-                Fill out the form below and we'll confirm your Fortuner booking within minutes
+                Contact us now for instant booking confirmation and best rates
               </p>
             </div>
             
-            <BookingForm preselectedCar="Toyota Fortuner (7-seater SUV)" />
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Button variant="whatsapp" size="xl" asChild>
+                  <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20Toyota%20Fortuner.">
+                    <MessageCircle className="w-6 h-6" />
+                    Book via WhatsApp
+                  </a>
+                </Button>
+                <Button variant="phone" size="xl" asChild>
+                  <a href="tel:+923075777559">
+                    <Phone className="w-6 h-6" />
+                    Call +92-307-577-7559
+                  </a>
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Available 24/7 for bookings and support
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -381,13 +399,13 @@ const FortunerPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="phone" size="lg" asChild>
-                  <a href="tel:03075777559">
+                  <a href="tel:+923075777559">
                     <Phone className="w-5 h-5" />
                     Call for Details
                   </a>
                 </Button>
                 <Button variant="whatsapp" size="lg" asChild>
-                  <a href="https://wa.me/+9203075777559?text=Hi%20RentOnUs%2C%20I%20have%20questions%20about%20the%20Toyota%20Fortuner.">
+                  <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20have%20questions%20about%20the%20Toyota%20Fortuner.">
                     <MessageCircle className="w-5 h-5" />
                     Ask on WhatsApp
                   </a>
@@ -450,17 +468,17 @@ const FortunerPage = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="xl" asChild>
-                <Link to="#booking">Reserve Fortuner Now</Link>
+                <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20Toyota%20Fortuner.">Reserve Fortuner Now</a>
               </Button>
               <div className="flex gap-4 justify-center">
                 <Button variant="phone" size="lg" asChild>
-                  <a href="tel:03075777559">
+                  <a href="tel:+923075777559">
                     <Phone className="w-5 h-5" />
                     Call
                   </a>
                 </Button>
                 <Button variant="whatsapp" size="lg" asChild>
-                  <a href="https://wa.me/+9203075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20Toyota%20Fortuner.">
+                  <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20Toyota%20Fortuner.">
                     <MessageCircle className="w-5 h-5" />
                     WhatsApp
                   </a>

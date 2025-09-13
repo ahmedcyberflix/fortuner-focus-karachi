@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import BookingForm from "@/components/BookingForm";
+
 import { 
   Car, 
   Heart, 
@@ -178,17 +178,17 @@ const Index = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button variant="hero" size="xl" asChild>
-                  <Link to="#booking">Book Now</Link>
+                  <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car.">Book Now</a>
                 </Button>
                 <div className="flex gap-3">
                   <Button variant="whatsapp" size="lg" asChild>
-                    <a href="https://wa.me/+9203075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car.">
+                    <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car.">
                       <MessageCircle className="w-5 h-5" />
                       WhatsApp
                     </a>
                   </Button>
                   <Button variant="phone" size="lg" asChild>
-                    <a href="tel:03075777559">
+                    <a href="tel:+923075777559">
                       <Phone className="w-5 h-5" />
                       Call Now
                     </a>
@@ -197,9 +197,26 @@ const Index = () => {
               </div>
             </div>
             
-            {/* Right side - Booking Form */}
+            {/* Right side - Contact Info */}
             <div className="lg:max-w-md">
-              <BookingForm className="animate-slide-up" />
+              <div className="bg-background/10 backdrop-blur rounded-lg p-8 space-y-6 animate-slide-up">
+                <h2 className="text-2xl font-bold text-white">Ready to Book?</h2>
+                <p className="text-white/90">Contact us now for instant booking and best rates!</p>
+                <div className="space-y-4">
+                  <Button variant="whatsapp" size="lg" asChild className="w-full">
+                    <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car.">
+                      <MessageCircle className="w-5 h-5" />
+                      Chat on WhatsApp
+                    </a>
+                  </Button>
+                  <Button variant="phone" size="lg" asChild className="w-full">
+                    <a href="tel:+923075777559">
+                      <Phone className="w-5 h-5" />
+                      Call +92-307-577-7559
+                    </a>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -243,7 +260,7 @@ const Index = () => {
                       <Link to={service.href}>Learn More</Link>
                     </Button>
                     <Button variant="cta" size="sm" asChild className="flex-1">
-                      <Link to="#booking">Book Now</Link>
+                      <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car.">Book Now</a>
                     </Button>
                   </div>
                 </CardContent>
@@ -293,9 +310,9 @@ const Index = () => {
                     ))}
                   </div>
                   <Button variant="cta" size="lg" asChild className="w-full">
-                    <Link to={car.href}>
-                      {car.id === 'fortuner' ? 'View Fortuner Details' : 'Check Availability'}
-                    </Link>
+                    <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20{car.name}.">
+                      {car.id === 'fortuner' ? 'Book Fortuner' : 'Book This Car'}
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -392,17 +409,17 @@ const Index = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button variant="hero" size="xl" asChild>
-                <Link to="#booking">Book Online Now</Link>
+                <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car.">Book Now</a>
               </Button>
               <div className="flex gap-4">
                 <Button variant="phone" size="lg" asChild>
-                  <a href="tel:03075777559" className="flex items-center space-x-2">
+                  <a href="tel:+923075777559" className="flex items-center space-x-2">
                     <Phone className="w-5 h-5" />
-                    <span>030-7577-7559</span>
+                    <span>+92-307-577-7559</span>
                   </a>
                 </Button>
                 <Button variant="whatsapp" size="lg" asChild>
-                  <a href="https://wa.me/+9203075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car.">
+                  <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car.">
                     <MessageCircle className="w-5 h-5" />
                     <span>WhatsApp</span>
                   </a>

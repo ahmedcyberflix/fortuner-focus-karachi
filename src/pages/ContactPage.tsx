@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import BookingForm from "@/components/BookingForm";
+
 import { 
   Phone, 
   MessageCircle, 
@@ -22,8 +22,8 @@ const ContactPage = () => {
       icon: Phone,
       title: "Call Us",
       description: "Speak directly with our team",
-      value: "030-7577-7559",
-      action: "tel:03075777559",
+      value: "+92-307-577-7559",
+      action: "tel:+923075777559",
       buttonText: "Call Now",
       buttonVariant: "phone" as const,
       availability: "Available 24/7"
@@ -32,8 +32,8 @@ const ContactPage = () => {
       icon: MessageCircle,
       title: "WhatsApp",
       description: "Quick chat for instant responses",
-      value: "030-7577-7559",
-      action: "https://wa.me/+9203075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20contact%20you.",
+      value: "+92-307-577-7559",
+      action: "https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20contact%20you.",
       buttonText: "Chat on WhatsApp",
       buttonVariant: "whatsapp" as const,
       availability: "Fast response guaranteed"
@@ -158,17 +158,33 @@ const ContactPage = () => {
       <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Booking Form */}
+            {/* Contact Info */}
             <div>
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-foreground mb-4">
-                  Book a Car Online
+                  Ready to Book Your Car?
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Fill out our booking form and we'll contact you within minutes to confirm your reservation.
+                  Contact us now for instant booking and the best rates in Karachi!
                 </p>
               </div>
-              <BookingForm />
+              <div className="space-y-6">
+                <Button variant="whatsapp" size="xl" asChild className="w-full">
+                  <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car.">
+                    <MessageCircle className="w-6 h-6" />
+                    Book via WhatsApp
+                  </a>
+                </Button>
+                <Button variant="phone" size="xl" asChild className="w-full">
+                  <a href="tel:+923075777559">
+                    <Phone className="w-6 h-6" />
+                    Call +92-307-577-7559
+                  </a>
+                </Button>
+                <div className="text-center pt-4">
+                  <p className="text-muted-foreground">Available 24/7 for bookings and support</p>
+                </div>
+              </div>
             </div>
             
             {/* Business Information */}
@@ -296,7 +312,7 @@ const ContactPage = () => {
                           <Phone className="w-5 h-5 text-accent mt-1" />
                           <div>
                             <p className="font-medium text-foreground">Phone</p>
-                            <p className="text-muted-foreground">030-7577-7559</p>
+                            <p className="text-muted-foreground">+92-307-577-7559</p>
                           </div>
                         </div>
                         <div className="flex items-start space-x-3">

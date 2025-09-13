@@ -95,14 +95,14 @@ const Header = () => {
             {/* CTA Buttons */}
             <div className="hidden md:flex items-center space-x-3">
               <Button variant="phone" size="sm" asChild>
-                <a href="tel:03075777559" className="flex items-center space-x-1">
+                <a href="tel:+923075777559" className="flex items-center space-x-1">
                   <Phone className="w-4 h-4" />
                   <span>Call</span>
                 </a>
               </Button>
               <Button variant="whatsapp" size="sm" asChild>
                 <a 
-                  href="https://wa.me/+9203075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car." 
+                  href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car." 
                   className="flex items-center space-x-1"
                 >
                   <MessageCircle className="w-4 h-4" />
@@ -110,7 +110,7 @@ const Header = () => {
                 </a>
               </Button>
               <Button variant="cta" size="lg" asChild>
-                <Link to="/#booking">Book Now</Link>
+                <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car.">Book Now</a>
               </Button>
             </div>
 
@@ -161,14 +161,14 @@ const Header = () => {
       <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background border-t shadow-lg">
         <div className="flex items-center justify-around py-2 px-4">
           <Button variant="phone" size="sm" asChild className="flex-1 mx-1">
-            <a href="tel:03075777559" className="flex flex-col items-center space-y-1">
+            <a href="tel:+923075777559" className="flex flex-col items-center space-y-1">
               <Phone className="w-5 h-5" />
               <span className="text-xs">Call</span>
             </a>
           </Button>
           <Button variant="whatsapp" size="sm" asChild className="flex-1 mx-1">
             <a 
-              href="https://wa.me/+9203075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car." 
+              href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car." 
               className="flex flex-col items-center space-y-1"
             >
               <MessageCircle className="w-5 h-5" />
@@ -176,10 +176,10 @@ const Header = () => {
             </a>
           </Button>
           <Button variant="cta" size="sm" asChild className="flex-1 mx-1">
-            <Link to="/#booking" className="flex flex-col items-center space-y-1">
+            <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car." className="flex flex-col items-center space-y-1">
               <Car className="w-5 h-5" />
               <span className="text-xs">Book Now</span>
-            </Link>
+            </a>
           </Button>
         </div>
       </div>
