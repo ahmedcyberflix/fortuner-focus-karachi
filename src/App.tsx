@@ -9,6 +9,7 @@ import CarsPage from "./pages/CarsPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import FAQPage from "./pages/FAQPage";
+import CarRentalKarachiPage from "./pages/CarRentalKarachiPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/toyota-fortuner-rental-karachi" element={<FortunerPage />} />
           <Route path="/cars" element={<CarsPage />} />
+          <Route path="/services/car-rental-karachi" element={<CarRentalKarachiPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FAQPage />} />
