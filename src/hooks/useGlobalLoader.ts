@@ -72,14 +72,14 @@ export const useGlobalLoader = () => {
     if (isInitialLoad.current) {
       startLoader();
       
-      // Stop loader when page is fully loaded
+      // Stop loader when page is fully loaded - add artificial delay for demo
       const handleLoad = () => {
-        stopLoader();
+        setTimeout(stopLoader, 1000); // Add 1s delay to show loader
       };
 
       if (document.readyState === 'complete') {
-        // Page already loaded
-        stopLoader();
+        // Page already loaded - add delay for demo
+        setTimeout(stopLoader, 1000);
       } else {
         window.addEventListener('load', handleLoad);
         return () => window.removeEventListener('load', handleLoad);
@@ -94,10 +94,10 @@ export const useGlobalLoader = () => {
     if (!isInitialLoad.current) {
       startLoader();
       
-      // Simulate route loading time - in a real app this would be tied to actual route resolution
+      // Simulate route loading time - make it longer to show the loader
       const routeLoadTimer = setTimeout(() => {
         stopLoader();
-      }, Math.random() * 1000 + 500); // Random load time between 500ms and 1.5s
+      }, Math.random() * 2000 + 2500); // Random load time between 2.5s and 4.5s to ensure loader shows
 
       return () => {
         clearTimeout(routeLoadTimer);
