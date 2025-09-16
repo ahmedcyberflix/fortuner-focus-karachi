@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Car, Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { Car, Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   const quickLinks = [
@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -86,53 +86,16 @@ const Footer = () => {
               <p>• Corporate Rentals</p>
             </div>
           </div>
-
-          {/* Map & Social */}
-          <div>
-            <h3 className="text-lg font-semibold font-heading mb-4">Location & Social</h3>
-            
-            {/* Google Map Embed */}
-            <div className="bg-secondary rounded-lg p-4 mb-4">
-              <div className="aspect-video bg-muted rounded-md flex items-center justify-center">
-                <div className="text-center text-muted-foreground">
-                  <MapPin className="w-8 h-8 mx-auto mb-2" />
-                  <p className="text-sm">Karachi, Pakistan</p>
-                  <p className="text-xs">Google Map Coming Soon</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="space-y-2">
-              <h4 className="text-sm font-medium">Follow Us</h4>
-              <div className="flex space-x-3">
-                <a 
-                  href="https://facebook.com/rentonus" 
-                  className="flex items-center justify-center w-8 h-8 bg-accent rounded-full text-accent-foreground hover:bg-accent-light transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-4 h-4" />
-                </a>
-                <a 
-                  href="https://instagram.com/rentonus" 
-                  className="flex items-center justify-center w-8 h-8 bg-accent rounded-full text-accent-foreground hover:bg-accent-light transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8">
+        <div className="border-t border-primary-foreground/20 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-primary-foreground/60">
               © 2025 RentOnUs. All rights reserved.
             </div>
-            <div className="flex space-x-6">
-              {legalLinks.map((link) => (
+            <div className="flex flex-wrap justify-center md:justify-end space-x-4">
+              {[...quickLinks.slice(0, 6), ...legalLinks].map((link) => (
                 <Link 
                   key={link.href}
                   to={link.href} 

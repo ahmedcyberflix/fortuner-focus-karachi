@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PageLoader from "./components/PageLoader";
+import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import FortunerPage from "./pages/FortunerPage";
 import CarsPage from "./pages/CarsPage";
@@ -23,6 +25,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
+        <PageLoader />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/toyota-fortuner-rental-karachi" element={<FortunerPage />} />

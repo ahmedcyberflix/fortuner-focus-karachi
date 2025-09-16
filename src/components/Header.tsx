@@ -157,31 +157,36 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Sticky Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background border-t shadow-lg">
-        <div className="flex items-center justify-around py-2 px-4">
-          <Button variant="phone" size="sm" asChild className="flex-1 mx-1">
-            <a href="tel:+923075777559" className="flex flex-col items-center space-y-1">
-              <Phone className="w-5 h-5" />
-              <span className="text-xs">Call</span>
-            </a>
-          </Button>
-          <Button variant="whatsapp" size="sm" asChild className="flex-1 mx-1">
-            <a 
-              href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car." 
-              className="flex flex-col items-center space-y-1"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span className="text-xs">WhatsApp</span>
-            </a>
-          </Button>
-          <Button variant="cta" size="sm" asChild className="flex-1 mx-1">
-            <a href="https://wa.me/+923075777559?text=Hi%20RentOnUs%2C%20I%20want%20to%20book%20a%20car." className="flex flex-col items-center space-y-1">
-              <Car className="w-5 h-5" />
-              <span className="text-xs">Book Now</span>
-            </a>
-          </Button>
-        </div>
+      {/* Mobile Sticky WhatsApp CTA */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden p-4 pb-[max(12px,env(safe-area-inset-bottom))]">
+        <Button 
+          variant="cta" 
+          size="lg" 
+          asChild 
+          className="w-full h-14 rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.18)] bg-accent text-accent-foreground hover:bg-accent/90 active:scale-[0.97] transition-all duration-150"
+          aria-label="Book now on WhatsApp"
+          onClick={() => {
+            // Track analytics event
+            try {
+              (window as any).gtag?.('event', 'book_now_whatsapp_click', {
+                event_category: 'cta',
+                event_label: 'mobile_sticky'
+              });
+            } catch (error) {
+              // Ignore analytics errors
+            }
+          }}
+        >
+          <a 
+            href="https://wa.me/923075777559?text=Hi%20RentOnUs%2C%20I%27d%20like%20to%20book%20a%20car." 
+            className="flex items-center justify-center space-x-2 font-semibold text-base"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle className="w-5 h-5" />
+            <span>BOOK NOW</span>
+          </a>
+        </Button>
       </div>
     </>
   );
