@@ -5,13 +5,24 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Users, Filter } from "lucide-react";
 
-import fortunerFeatured from "@/assets/fortuner-featured.jpg";
-import corollaFeatured from "@/assets/corolla-featured.jpg";
-import altoFeatured from "@/assets/alto-featured.jpg";
+// Fleet Images
+import fortunerImage from "@/assets/fleet/toyota-fortuner-an160.jpg";
+import corollaImage from "@/assets/fleet/toyota-corolla-e210.jpg";
+import altoImage from "@/assets/fleet/suzuki-alto-ha36.jpg";
+import civicImage from "@/assets/fleet/honda-civic-xi.jpg";
+import mercedesImage from "@/assets/fleet/mercedes-executive-sedan.jpg";
+import audiImage from "@/assets/fleet/audi-a6-c8.jpg";
+import brvImage from "@/assets/fleet/honda-brv-2nd-gen.jpg";
+import karvaanImage from "@/assets/fleet/changan-karvaan-7.jpg";
+import landCruiserImage from "@/assets/fleet/toyota-land-cruiser-j300.jpg";
+import hiaceImage from "@/assets/fleet/toyota-hiace-h300.jpg";
+import coasterImage from "@/assets/fleet/toyota-coaster-25.jpg";
+import armoredImage from "@/assets/fleet/armored-suv.jpg";
 
 // Analytics tracking
 const trackEvent = (eventName: string, properties: Record<string, any>) => {
@@ -32,7 +43,7 @@ const CarsPage = () => {
       id: "fortuner",
       name: "Toyota Fortuner",
       category: "SUV",
-      image: fortunerFeatured,
+      image: fortunerImage,
       description: "7-seater luxury SUV perfect for families and outstation trips",
       features: ["7 Seats", "Automatic", "AC", "Luxury", "4WD"],
       transmission: "automatic",
@@ -42,13 +53,13 @@ const CarsPage = () => {
       href: "/toyota-fortuner-rental-karachi",
       priceIndicator: "Premium",
       popularity: 10,
-      alt: "Toyota Fortuner 7-seater SUV rental in Karachi - luxury family vehicle with 4WD and automatic transmission"
+      alt: "Toyota Fortuner white 7-seater SUV, 4WD — Karachi rental."
     },
     {
       id: "alto",
       name: "Suzuki Alto",
       category: "Economy",
-      image: altoFeatured,
+      image: altoImage,
       description: "Economy car perfect for daily commutes and short trips",
       features: ["4 Seats", "Automatic", "AC", "Compact", "Fuel-Efficient"],
       transmission: "automatic",
@@ -58,13 +69,13 @@ const CarsPage = () => {
       href: "/cars",
       priceIndicator: "Economy",
       popularity: 8,
-      alt: "Suzuki Alto automatic economy car rental in Karachi - fuel-efficient compact vehicle for city travel"
+      alt: "Suzuki Alto (HA36) automatic compact hatchback — budget city rental, fuel-efficient."
     },
     {
       id: "corolla",
       name: "Toyota Corolla",
       category: "Standard",
-      image: corollaFeatured,
+      image: corollaImage,
       description: "Reliable sedan ideal for city travel and business meetings",
       features: ["5 Seats", "Automatic", "AC", "Comfortable", "Fuel Efficient"],
       transmission: "automatic",
@@ -74,13 +85,13 @@ const CarsPage = () => {
       href: "/cars",
       priceIndicator: "Standard",
       popularity: 9,
-      alt: "Toyota Corolla sedan rental in Karachi - reliable automatic car for business and city travel"
+      alt: "Toyota Corolla (E210) sedan — comfortable city travel, Karachi car hire."
     },
     {
       id: "civic",
       name: "Honda Civic",
       category: "Standard",
-      image: corollaFeatured, // Placeholder - will be replaced with actual image
+      image: civicImage,
       description: "Stylish sedan with modern features and excellent fuel economy",
       features: ["5 Seats", "Automatic", "AC", "Stylish", "Modern"],
       transmission: "automatic",
@@ -90,13 +101,13 @@ const CarsPage = () => {
       href: "/cars",
       priceIndicator: "Standard",
       popularity: 7,
-      alt: "Honda Civic sedan rental in Karachi - stylish automatic car with modern features"
+      alt: "Honda Civic 11th-generation sedan — premium interior, Karachi business rental."
     },
     {
       id: "mercedes-e-class",
       name: "Mercedes E-Class",
       category: "Luxury",
-      image: fortunerFeatured, // Placeholder - will be replaced with actual image
+      image: mercedesImage,
       description: "Premium luxury sedan for executive travel and special occasions",
       features: ["5 Seats", "Automatic", "AC", "Luxury", "Premium"],
       transmission: "automatic",
@@ -106,13 +117,13 @@ const CarsPage = () => {
       href: "/cars",
       priceIndicator: "Luxury",
       popularity: 6,
-      alt: "Mercedes E-Class luxury sedan rental in Karachi - premium executive car with automatic transmission"
+      alt: "Mercedes-Benz executive sedan — chauffeur service for events and airport pickups."
     },
     {
       id: "audi-a6",
       name: "Audi A6",
       category: "Luxury",
-      image: fortunerFeatured, // Placeholder - will be replaced with actual image
+      image: audiImage,
       description: "Sophisticated luxury sedan with cutting-edge technology",
       features: ["5 Seats", "Automatic", "AC", "Luxury", "Technology"],
       transmission: "automatic",
@@ -122,13 +133,13 @@ const CarsPage = () => {
       href: "/cars",
       priceIndicator: "Luxury",
       popularity: 5,
-      alt: "Audi A6 luxury sedan rental in Karachi - sophisticated automatic car with premium technology"
+      alt: "Audi A6 (C8) luxury sedan — corporate chauffeur hire in Karachi."
     },
     {
       id: "honda-brv",
       name: "Honda BR-V",
       category: "SUV",
-      image: fortunerFeatured, // Placeholder - will be replaced with actual image
+      image: brvImage,
       description: "Compact 7-seater SUV perfect for family adventures",
       features: ["7 Seats", "Automatic", "AC", "Family", "Compact SUV"],
       transmission: "automatic",
@@ -138,13 +149,13 @@ const CarsPage = () => {
       href: "/cars",
       priceIndicator: "Standard",
       popularity: 6,
-      alt: "Honda BR-V 7-seater SUV rental in Karachi - compact family vehicle with automatic transmission"
+      alt: "Honda BR-V 7-seater crossover — family trips & city tours."
     },
     {
       id: "changan-karvaan",
       name: "Changan Karvaan",
       category: "MPV",
-      image: fortunerFeatured, // Placeholder - will be replaced with actual image
+      image: karvaanImage,
       description: "Spacious 7-seater MPV ideal for group travel and families",
       features: ["7 Seats", "Manual", "AC", "Spacious", "Group Travel"],
       transmission: "manual",
@@ -154,13 +165,13 @@ const CarsPage = () => {
       href: "/cars",
       priceIndicator: "Standard",
       popularity: 4,
-      alt: "Changan Karvaan 7-seater MPV rental in Karachi - spacious family vehicle for group travel"
+      alt: "Changan Karvaan 7-seater MPV — city and outstation transfers."
     },
     {
       id: "land-cruiser",
       name: "Toyota Land Cruiser",
       category: "SUV",
-      image: fortunerFeatured, // Placeholder - will be replaced with actual image
+      image: landCruiserImage,
       description: "Premium 7-seater SUV for luxury travel and off-road adventures",
       features: ["7 Seats", "Automatic", "AC", "Luxury", "Off-Road"],
       transmission: "automatic",
@@ -170,13 +181,13 @@ const CarsPage = () => {
       href: "/cars",
       priceIndicator: "Luxury",
       popularity: 7,
-      alt: "Toyota Land Cruiser 7-seater luxury SUV rental in Karachi - premium off-road vehicle with automatic transmission"
+      alt: "Toyota Land Cruiser J300 7-seater luxury SUV — VIP/long-distance rental."
     },
     {
       id: "hiace",
       name: "Toyota HiAce",
       category: "Van",
-      image: fortunerFeatured, // Placeholder - will be replaced with actual image
+      image: hiaceImage,
       description: "13-seater van perfect for group transportation and events",
       features: ["13 Seats", "Manual", "AC", "Group Transport", "Events"],
       transmission: "manual",
@@ -186,13 +197,13 @@ const CarsPage = () => {
       href: "/cars",
       priceIndicator: "Premium",
       popularity: 3,
-      alt: "Toyota HiAce 13-seater van rental in Karachi - group transportation vehicle for events and large groups"
+      alt: "Toyota HiAce H300 13-seater commuter van — airport transfers & group trips."
     },
     {
       id: "coaster",
       name: "Toyota Coaster",
       category: "Bus",
-      image: fortunerFeatured, // Placeholder - will be replaced with actual image
+      image: coasterImage,
       description: "25-seater bus ideal for corporate events and large group travel",
       features: ["25 Seats", "Manual", "AC", "Corporate", "Large Groups"],
       transmission: "manual",
@@ -202,13 +213,13 @@ const CarsPage = () => {
       href: "/cars",
       priceIndicator: "Premium",
       popularity: 2,
-      alt: "Toyota Coaster 25-seater bus rental in Karachi - corporate transportation for large groups and events"
+      alt: "Toyota Coaster 25-seater minibus — staff transport and group tours."
     },
     {
       id: "armored-vehicle",
       name: "Armored Vehicle",
       category: "Armored",
-      image: fortunerFeatured, // Placeholder - will be replaced with actual image
+      image: armoredImage,
       description: "High-security armored vehicle for VIP protection (Enquiry only)",
       features: ["Armored", "Security", "VIP", "Protection", "Enquiry Only"],
       transmission: "automatic",
@@ -218,7 +229,7 @@ const CarsPage = () => {
       href: "/cars",
       priceIndicator: "Enquiry",
       popularity: 1,
-      alt: "Armored security vehicle rental in Karachi - VIP protection and high-security transportation"
+      alt: "Armored SUV — VIP secure transport (chauffeured)."
     }
   ];
 
@@ -386,11 +397,14 @@ const CarsPage = () => {
                   onMouseEnter={() => handleCardView(vehicle)}
                 >
                   <div className="relative">
-                    <img 
+                     <img 
                       src={vehicle.image} 
                       alt={vehicle.alt}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       loading="lazy"
+                      width="1600"
+                      height="900"
+                      decoding="async"
                     />
                     <div className="absolute top-4 left-4 space-y-2">
                       {vehicle.badges.map((badge) => (
@@ -512,6 +526,29 @@ const CarsPage = () => {
         </section>
 
         <Footer />
+        
+        {/* Image Credits Modal */}
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="fixed bottom-4 right-4 text-xs text-muted-foreground hover:text-foreground"
+            >
+              Image Credits
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle>Image Credits</DialogTitle>
+              <DialogDescription>
+                Vehicle images are AI-generated for demonstration purposes. 
+                Some reference photos from Wikimedia Commons, licensed under CC BY-SA. 
+                Photographer credits available on the source pages.
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
         
         {/* Schema.org JSON-LD */}
         <script
