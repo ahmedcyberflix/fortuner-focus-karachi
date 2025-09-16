@@ -35,18 +35,18 @@ const PageLoader = () => {
     <>
       <style>
         {`
-          @keyframes loading {
+          @keyframes loading-progress {
             0% { width: 0%; }
-            50% { width: 80%; }
+            50% { width: 90%; }
             100% { width: 100%; }
           }
           .loading-bar {
-            animation: loading 0.6s ease-out forwards;
+            animation: loading-progress 0.6s ease-out forwards;
           }
         `}
       </style>
       <div 
-        className="fixed top-0 left-0 right-0 z-[9999] h-0.5 bg-transparent"
+        className="fixed top-0 left-0 right-0 z-[1050] h-0.5 bg-transparent"
         aria-busy="true"
         role="progressbar"
         aria-label="Page loading"
