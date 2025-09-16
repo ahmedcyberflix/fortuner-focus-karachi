@@ -1,24 +1,17 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Car, Users, Settings, Filter, Search } from "lucide-react";
+import { Users } from "lucide-react";
 
 import fortunerFeatured from "@/assets/fortuner-featured.jpg";
 import corollaFeatured from "@/assets/corolla-featured.jpg";
 import altoFeatured from "@/assets/alto-featured.jpg";
 
 const CarsPage = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [categoryFilter, setCategoryFilter] = useState("all");
-  const [transmissionFilter, setTransmissionFilter] = useState("all");
-
   const vehicles = [
     {
       id: "fortuner",
@@ -61,18 +54,6 @@ const CarsPage = () => {
     }
   ];
 
-  const categories = ["all", "Economy", "Sedan", "SUV", "Luxury"];
-  const transmissions = ["all", "automatic", "manual"];
-
-  const filteredVehicles = vehicles.filter(vehicle => {
-    const matchesSearch = vehicle.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         vehicle.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = categoryFilter === "all" || vehicle.category === categoryFilter;
-    const matchesTransmission = transmissionFilter === "all" || vehicle.transmission === transmissionFilter;
-    
-    return matchesSearch && matchesCategory && matchesTransmission;
-  });
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -108,79 +89,11 @@ const CarsPage = () => {
         </div>
       </section>
 
-      {/* Filters Section */}
-      <section className="py-8 bg-secondary/30 sticky top-16 z-30 border-b">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-4 items-center">
-            <div className="flex items-center space-x-2 flex-shrink-0">
-              <Filter className="w-5 h-5 text-muted-foreground" />
-              <span className="font-medium text-foreground">Filters:</span>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-              {/* Search */}
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                <Input
-                  placeholder="Search cars..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 w-full sm:w-64"
-                />
-              </div>
-              
-              {/* Category Filter */}
-              <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-                <SelectTrigger className="w-full sm:w-40">
-                  <SelectValue placeholder="Category" />
-                </SelectTrigger>
-                <SelectContent>
-                  {categories.map((category) => (
-                    <SelectItem key={category} value={category}>
-                      {category === "all" ? "All Categories" : category}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              
-              {/* Transmission Filter */}
-              <Select value={transmissionFilter} onValueChange={setTransmissionFilter}>
-                <SelectTrigger className="w-full sm:w-40">
-                  <SelectValue placeholder="Transmission" />
-                </SelectTrigger>
-                <SelectContent>
-                  {transmissions.map((transmission) => (
-                    <SelectItem key={transmission} value={transmission}>
-                      {transmission === "all" ? "All Transmissions" : 
-                       transmission.charAt(0).toUpperCase() + transmission.slice(1)}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Vehicles Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          {filteredVehicles.length === 0 ? (
-            <div className="text-center py-16">
-              <Car className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-foreground mb-2">No vehicles found</h3>
-              <p className="text-muted-foreground">Try adjusting your search criteria</p>
-              <Button variant="outline" onClick={() => {
-                setSearchTerm("");
-                setCategoryFilter("all");
-                setTransmissionFilter("all");
-              }} className="mt-4">
-                Clear Filters
-              </Button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredVehicles.map((vehicle) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {vehicles.map((vehicle) => (
                 <Card key={vehicle.id} className="vehicle-card group overflow-hidden">
                   <div className="relative">
                     <img 
@@ -252,7 +165,6 @@ const CarsPage = () => {
                 </Card>
               ))}
             </div>
-          )}
         </div>
       </section>
 
