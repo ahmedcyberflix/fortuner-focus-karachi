@@ -4,8 +4,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ovaisSaeedImage from "@/assets/team/ovais-saeed.jpg";
-import usamaSaeedImage from "@/assets/team/usama-saeed.jpg";
 import { 
   Car, 
   Shield, 
@@ -55,16 +53,12 @@ const AboutPage = () => {
       name: "Ovais Saeed",
       role: "CEO & Founder",
       description: "Leads RentOnUs with a focus on reliable service, transparent pricing, and customer trust in Karachi.",
-      image: ovaisSaeedImage,
-      alt: "Ovais Saeed — CEO & Founder, RentOnUs",
       ariaLabel: "Team member: Ovais Saeed, CEO and Founder"
     },
     {
       name: "Usama Saeed",
       role: "Operations Manager",
       description: "Oversees daily operations, driver scheduling, and fleet readiness to ensure on-time bookings.",
-      image: usamaSaeedImage,
-      alt: "Usama Saeed — Operations Manager, RentOnUs",
       ariaLabel: "Team member: Usama Saeed, Operations Manager"
     }
   ];
@@ -198,16 +192,8 @@ const AboutPage = () => {
             {team.map((member, index) => (
               <article key={index} role="listitem" className="trust-card text-center" aria-label={member.ariaLabel}>
                 <CardHeader>
-                  <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-accent/20">
-                    <img 
-                      src={member.image} 
-                      alt={member.alt}
-                      width={80}
-                      height={80}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                  <div className="w-20 h-20 bg-gradient-to-br from-accent to-accent-light rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-10 h-10 text-accent-foreground" />
                   </div>
                   <CardTitle className="text-xl">
                     <h3>{member.name}</h3>
