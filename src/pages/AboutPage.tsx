@@ -4,6 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ovaisSaeedImage from "@/assets/team/ovais-saeed.jpg";
+import usamaSaeedImage from "@/assets/team/usama-saeed.jpg";
 import { 
   Car, 
   Shield, 
@@ -50,19 +52,20 @@ const AboutPage = () => {
 
   const team = [
     {
-      name: "Muhammad Ahmed",
-      role: "Founder & CEO",
-      description: "Passionate about providing excellent car rental services to the people of Karachi."
+      name: "Ovais Saeed",
+      role: "CEO & Founder",
+      description: "Leads RentOnUs with a focus on reliable service, transparent pricing, and customer trust in Karachi.",
+      image: ovaisSaeedImage,
+      alt: "Ovais Saeed — CEO & Founder, RentOnUs",
+      ariaLabel: "Team member: Ovais Saeed, CEO and Founder"
     },
     {
-      name: "Fatima Khan",
+      name: "Usama Saeed",
       role: "Operations Manager",
-      description: "Ensures smooth operations and maintains our high-quality service standards."
-    },
-    {
-      name: "Hassan Ali",
-      role: "Fleet Manager",
-      description: "Responsible for maintaining our vehicles in perfect condition for customer safety."
+      description: "Oversees daily operations, driver scheduling, and fleet readiness to ensure on-time bookings.",
+      image: usamaSaeedImage,
+      alt: "Usama Saeed — Operations Manager, RentOnUs",
+      ariaLabel: "Team member: Usama Saeed, Operations Manager"
     }
   ];
 
@@ -191,14 +194,24 @@ const AboutPage = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <section role="list" className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-center">
             {team.map((member, index) => (
-              <Card key={index} className="trust-card text-center">
+              <article key={index} role="listitem" className="trust-card text-center" aria-label={member.ariaLabel}>
                 <CardHeader>
-                  <div className="w-20 h-20 bg-gradient-to-br from-accent to-accent-light rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-10 h-10 text-accent-foreground" />
+                  <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-accent/20">
+                    <img 
+                      src={member.image} 
+                      alt={member.alt}
+                      width={80}
+                      height={80}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
-                  <CardTitle className="text-xl">{member.name}</CardTitle>
+                  <CardTitle className="text-xl">
+                    <h3>{member.name}</h3>
+                  </CardTitle>
                   <CardDescription className="text-accent font-medium">
                     {member.role}
                   </CardDescription>
@@ -206,9 +219,9 @@ const AboutPage = () => {
                 <CardContent>
                   <p className="text-muted-foreground">{member.description}</p>
                 </CardContent>
-              </Card>
+              </article>
             ))}
-          </div>
+          </section>
         </div>
       </section>
 
@@ -335,6 +348,30 @@ const AboutPage = () => {
       </section>
 
       <Footer />
+
+      {/* Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "RentOnUs",
+          "url": "https://www.rentonus.live/",
+          "brand": "RentOnUs",
+          "founder": "Ovais Saeed",
+          "employee": [
+            {
+              "@type": "Person",
+              "name": "Ovais Saeed",
+              "jobTitle": "CEO & Founder"
+            },
+            {
+              "@type": "Person",
+              "name": "Usama Saeed",
+              "jobTitle": "Operations Manager"
+            }
+          ]
+        })}
+      </script>
     </div>
   );
 };
