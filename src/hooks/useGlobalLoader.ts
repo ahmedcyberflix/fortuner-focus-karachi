@@ -12,8 +12,8 @@ export const useGlobalLoader = () => {
     startTime: null
   });
   const location = useLocation();
-  const timeoutRef = useRef<NodeJS.Timeout>();
-  const hardStopRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const hardStopRef = useRef<ReturnType<typeof setTimeout>>();
   const isInitialLoad = useRef(true);
 
   const startLoader = useCallback(() => {
